@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+$purple: rgb(109 40 217) !important;
+$black: rgb(15 23 42) !important;
+$light_dark: rgb(51 65 85) !important;
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+// reusable components
+
+.sec-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .sec-title-img {
+    width: 100px;
+    height: auto;
+
+    .img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .title {
+    font-size: 30px;
+    color: $black;
+    text-align: center;
+
+    span {
+      color: $purple;
+    }
+  }
+
+  .subtitle {
+    color: $light_dark;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.container {
+  max-width: 91%;
+  margin: 0 auto;
+  padding: 70px 40px;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+// modules section style start
+.modules {
+  .container {
+    .modules-wrapper {
+      .modules-main-content {
+        margin-top: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4%;
+
+        .modules-img {
+          flex-basis: 46%;
+          // flex-grow: 1;
+          height: 100%;
+          width: 100%;
+
+          .img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .modules-content {
+          flex-basis: 46%;
+          // flex-grow: 1;
+          overflow-y: scroll;
+          overflow-x: scroll;
+
+          &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+          }
+
+          &::-webkit-scrollbar-track {
+            border-radius: 5px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: rgb(203 213 225);
+            border-radius: 5px;
+            height: 50px;
+          }
+
+          &::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.4);
+          }
+
+          .modules-content-scroller {
+            height: 350px;
+            width: 100%;
+
+            .modules-content-item {
+              gap: 30px;
+              position: relative;
+              padding-bottom: 20px;
+
+              .module-item-number {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 25px;
+                width: 25px;
+                border-radius: 100%;
+                background: rgb(121, 80, 242);
+                color: rgb(255, 255, 255);
+
+                .nm {
+                  font-size: 18px;
+                }
+              }
+
+              .module-item-content {
+                margin-left: 35px;
+
+                .item-title {
+                  font-size: 18px;
+                  color: $black;
+                  font-weight: 500;
+                }
+
+                .item-subtitle {
+                  font-size: 15px;
+                  color: $light_dark;
+                }
+
+                .item-content {
+                  display: flex;
+                  align-items: center;
+                  justify-content: start;
+                  flex-wrap: wrap;
+                  gap: 10px;
+                  margin: 5px 0;
+
+                  .content {
+                    background: #fff;
+                    color: $purple;
+                    padding: 0 15px;
+                    border-radius: 15px;
+                    border: 1px solid rgb(121, 80, 242);
+                    height: 25px;
+                    white-space: nowrap;
+                  }
+                }
+
+                .item-ds {
+                  font-size: 15px;
+                  color: $light_dark;
+                }
+              }
+
+              &::before {
+                content: "";
+                position: absolute;
+                left: 12px;
+                top: 8px;
+                width: 2px;
+                height: 100%;
+                background: rgb(121, 80, 242);
+                z-index: -1;
+              }
+
+              &:last-child {
+                &::before {
+                  content: "";
+                  position: absolute;
+                  left: 12px;
+                  top: 8px;
+                  width: 3px;
+                  height: 100%;
+                  background: transparent;
+                  z-index: -1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
